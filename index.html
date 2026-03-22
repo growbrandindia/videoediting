@@ -174,16 +174,16 @@
 
         /* Aspect Ratios */
         .ratio-16-9 { padding-top: 56.25%; } /* Widescreen */
-        .ratio-9-16 { padding-top: 177.77%; } /* Vertical */
+        .ratio-9-16 { padding-top: 177.77%; } /* Vertical / Reels */
 
         /* --- SECTIONS & GRIDS --- */
-        .section { padding: 80px 0; border-top: 1px solid var(--border-glass); }
+        .section { padding: 80px 0; border-top: 1px solid var(--border-color); }
         .section-darker { background: #08080b; }
         
-        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
         .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); gap: 30px; }
 
-        @media (max-width: 768px) { .grid-2 { grid-template-columns: 1fr; } }
+        @media (max-width: 768px) { .grid-2, .grid-3 { grid-template-columns: 1fr; } }
 
         .category-label {
             display: inline-block;
@@ -196,30 +196,6 @@
             margin-top: 15px;
             text-transform: uppercase;
         }
-        
-        .video-title { font-size: 1.2rem; font-weight: 700; margin-top: 10px; }
-
-        /* --- SERVICES (ANGLED CARDS) --- */
-        .services-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
-        .services-text { position: sticky; top: 100px; }
-        .services-text h2 { font-size: 3rem; font-weight: 800; line-height: 1.1; margin-bottom: 20px; }
-        
-        .service-cards { display: flex; flex-direction: column; gap: 40px; }
-        .s-card {
-            padding: 40px; border-radius: 20px; background: var(--accent-green); color: var(--bg-dark);
-            transform: rotate(2deg); transition: var(--transition);
-        }
-        .s-card:nth-child(even) {
-            background: var(--bg-card); color: var(--text-main); border: 1px solid var(--border-color);
-            transform: rotate(-2deg);
-        }
-        .s-card:hover { transform: rotate(0deg) translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
-        .s-card h3 { font-size: 1.8rem; margin-bottom: 15px; font-weight: 800; }
-        
-        @media (max-width: 900px) {
-            .services-layout { grid-template-columns: 1fr; }
-            .services-text { position: static; margin-bottom: 40px; text-align: center; }
-        }
 
         /* --- MARQUEE SCROLL --- */
         .marquee-container {
@@ -231,30 +207,6 @@
             font-size: 2.5rem; font-weight: 800; color: var(--text-muted); margin-right: 50px; text-transform: uppercase;
         }
         @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-
-        /* --- PRICING --- */
-        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; align-items: center; }
-        .price-card { background: var(--text-main); color: var(--bg-dark); padding: 40px; border-radius: 16px; display: flex; flex-direction: column; gap: 20px; }
-        .price-card.featured { background: var(--accent-green); transform: scale(1.05); }
-        @media (max-width: 900px) { .price-card.featured { transform: scale(1); } }
-        
-        .price-card h3 { font-size: 1.5rem; }
-        .price-card .price { font-size: 3rem; font-weight: 900; }
-        .price-card .price span { font-size: 1rem; font-weight: 500; color: #555; }
-        .feature-list { list-style: none; margin-bottom: 30px; flex-grow: 1; }
-        .feature-list li { margin-bottom: 12px; font-weight: 600; display: flex; align-items: center; gap: 10px; }
-        .feature-list li::before { content: '✔'; background: #000; color: #fff; border-radius: 50%; width: 20px; height: 20px; display: inline-flex; justify-content: center; align-items: center; font-size: 0.7rem; }
-        .price-card .btn { width: 100%; background: #000; color: #fff; }
-
-        /* --- FAQ SECTION --- */
-        .faq-container { max-width: 800px; margin: 0 auto; }
-        .faq-item { border: 1px solid var(--border-color); margin-bottom: 15px; border-radius: 8px; overflow: hidden; }
-        .faq-question { padding: 20px; background: var(--bg-card); cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 600; font-size: 1.1rem; transition: var(--transition); }
-        .faq-question:hover { background: var(--bg-card-hover); }
-        .faq-answer { padding: 0 20px; max-height: 0; overflow: hidden; background: var(--bg-card); color: var(--text-muted); transition: max-height 0.4s ease, padding 0.4s ease; }
-        .faq-item.active .faq-answer { padding: 20px; max-height: 200px; border-top: 1px solid var(--border-color); }
-        .faq-icon { font-size: 1.5rem; font-weight: 300; transition: transform 0.3s; }
-        .faq-item.active .faq-icon { transform: rotate(45deg); color: var(--accent-green); }
 
         /* --- FOOTER --- */
         footer { border-top: 1px solid var(--border-color); padding: 60px 20px 30px; margin-top: 80px; }
@@ -269,120 +221,167 @@
     <nav>
         <div class="logo">Aman.</div>
         <div class="nav-links">
-            <a href="#work">Work</a>
-            <a href="#services">Services</a>
-            <a href="#pricing">Pricing</a>
-            <a href="#faq">FAQ</a>
+            <a href="#long-form">YouTube</a>
+            <a href="#ai-videos">AI Videos</a>
+            <a href="#reels">Reels & Shorts</a>
+            <a href="#motion">Motion</a>
         </div>
         <a href="#contact" class="btn btn-primary">Hire me ➔</a>
     </nav>
 
     <header class="hero">
         <h1>Unleash Your Viral Potential With <span class="text-accent">Pro Video Editing</span></h1>
-        <p>I transform raw footage into captivating content that gets seen, shared, and loved. Take your channel and brand to the next level with expert editing magic.</p>
+        <p>I transform raw footage into captivating content that gets seen, shared, and loved. Elevating brands through High-Retention YouTube Edits, Dynamic Reels, and Motion Graphics.</p>
         
         <div class="hero-btns">
             <a href="#contact" class="btn btn-primary">Let's Talk</a>
-            <a href="#work" class="btn btn-outline">View Portfolio</a>
+            <a href="#long-form" class="btn btn-outline">View Portfolio</a>
         </div>
     </header>
 
-    <section id="work" class="section container">
-        <h2 class="section-title">Reels & <span class="text-accent">Shorts</span></h2>
+    <section id="long-form" class="section container">
+        <h2 class="section-title">Long <span class="text-accent">YouTube Videos</span></h2>
         <div class="grid-3">
             <div>
-                <div class="video-wrapper ratio-9-16">
-                    <iframe src="https://www.youtube.com/embed/YsXn5xJHNzw" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                <div class="video-wrapper ratio-16-9">
+                    <iframe src="https://www.youtube.com/embed/8FPfJbHqiTk" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                 </div>
-                <div class="category-label">Shorts</div>
-                <h3 class="video-title">High-Retention Hook</h3>
+                <div class="category-label">YT Video</div>
             </div>
             <div>
-                <div class="video-wrapper ratio-9-16">
-                    <iframe src="https://www.youtube.com/embed/YsXn5xJHNzw" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                <div class="video-wrapper ratio-16-9">
+                    <iframe src="https://www.youtube.com/embed/Jsv2vWfElKk" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                 </div>
-                <div class="category-label">Reels</div>
-                <h3 class="video-title">TikTok Trend Edit</h3>
+                <div class="category-label">YT Video</div>
             </div>
             <div>
-                <div class="video-wrapper ratio-9-16">
-                    <iframe src="https://www.youtube.com/embed/YsXn5xJHNzw" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                <div class="video-wrapper ratio-16-9">
+                    <iframe src="https://www.youtube.com/embed/cTvb-NU_0uE" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                 </div>
-                <div class="category-label">IG Reel</div>
-                <h3 class="video-title">Dynamic Captions Sync</h3>
+                <div class="category-label">YT Video</div>
             </div>
         </div>
     </section>
 
-    <section class="section section-darker">
+    <section id="ai-videos" class="section section-darker">
         <div class="container">
-            <h2 class="section-title">YT Videos & <span class="text-accent">Podcasts</span></h2>
+            <h2 class="section-title">AI <span class="text-accent">Videos</span></h2>
+            
+            <div class="grid-3" style="margin-bottom: 30px;">
+                <div>
+                    <div class="video-wrapper ratio-16-9">
+                        <iframe src="https://player.vimeo.com/video/1175886569" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                    </div>
+                    <div class="category-label">AI Generation</div>
+                </div>
+                <div>
+                    <div class="video-wrapper ratio-16-9">
+                        <iframe src="https://player.vimeo.com/video/1175885591" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                    </div>
+                    <div class="category-label">AI Generation</div>
+                </div>
+                <div>
+                    <div class="video-wrapper ratio-16-9">
+                        <iframe src="https://player.vimeo.com/video/1175885927" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                    </div>
+                    <div class="category-label">AI Generation</div>
+                </div>
+            </div>
+
             <div class="grid-2">
                 <div>
-                    <div class="video-wrapper ratio-16-9">
-                        <iframe src="https://www.youtube.com/embed/YsXn5xJHNzw" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    <div class="video-wrapper ratio-9-16">
+                        <iframe src="https://www.instagram.com/reel/DWAm7MTgwZ3/embed/" scrolling="no" frameborder="0"></iframe>
                     </div>
-                    <div class="category-label">YT Video</div>
-                    <h3 class="video-title">Mastercut Review Edit</h3>
+                    <div class="category-label">AI Reel</div>
                 </div>
                 <div>
-                    <div class="video-wrapper ratio-16-9">
-                        <iframe src="https://www.youtube.com/embed/YsXn5xJHNzw" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    <div class="video-wrapper ratio-9-16">
+                        <iframe src="https://www.instagram.com/reel/DVxirFECfb4/embed/" scrolling="no" frameborder="0"></iframe>
                     </div>
-                    <div class="category-label">Podcast Edit</div>
-                    <h3 class="video-title">Multi-cam Interview Sync</h3>
+                    <div class="category-label">AI Reel</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="section container">
-        <h2 class="section-title">AI, Motion & <span class="text-accent">Animation</span></h2>
+    <section id="reels" class="section container">
+        <h2 class="section-title">High-Retention <span class="text-accent">Reels & Shorts</span></h2>
+        
+        <h3 style="margin-bottom: 20px; font-size: 1.5rem; color: var(--text-main);">Fashion Reels</h3>
+        <div class="grid-3" style="margin-bottom: 60px;">
+            <div class="video-wrapper ratio-9-16">
+                <iframe src="https://www.instagram.com/reel/DClZNN4s6qT/embed/" scrolling="no" frameborder="0"></iframe>
+            </div>
+            <div class="video-wrapper ratio-9-16">
+                <iframe src="https://www.instagram.com/reel/DCWTr-_NC78/embed/" scrolling="no" frameborder="0"></iframe>
+            </div>
+            <div class="video-wrapper ratio-9-16">
+                <iframe src="https://www.instagram.com/reel/DCJDTDRtZhV/embed/" scrolling="no" frameborder="0"></iframe>
+            </div>
+        </div>
+
+        <h3 style="margin-bottom: 20px; font-size: 1.5rem; color: var(--text-main);">Automotive Reels</h3>
+        <div class="grid-3" style="margin-bottom: 60px;">
+            <div class="video-wrapper ratio-9-16">
+                <iframe src="https://www.instagram.com/reel/C-aAQTTBTGS/embed/" scrolling="no" frameborder="0"></iframe>
+            </div>
+            <div class="video-wrapper ratio-9-16">
+                <iframe src="https://www.instagram.com/reel/C-SNNh7JI33/embed/" scrolling="no" frameborder="0"></iframe>
+            </div>
+            <div class="video-wrapper ratio-9-16">
+                <iframe src="https://www.instagram.com/reel/DD11XL-NyoQ/embed/" scrolling="no" frameborder="0"></iframe>
+            </div>
+        </div>
+
+        <h3 style="margin-bottom: 20px; font-size: 1.5rem; color: var(--text-main);">Models Reels</h3>
+        <div class="grid-3" style="margin-bottom: 60px;">
+            <div class="video-wrapper ratio-9-16">
+                <iframe src="https://www.instagram.com/reel/DFX3n9EzAHQ/embed/" scrolling="no" frameborder="0"></iframe>
+            </div>
+            <div class="video-wrapper ratio-9-16">
+                <iframe src="https://www.instagram.com/reel/DFDOC-5Tg-j/embed/" scrolling="no" frameborder="0"></iframe>
+            </div>
+            <div class="video-wrapper ratio-9-16">
+                <iframe src="https://www.instagram.com/reel/DFKr74FTkhu/embed/" scrolling="no" frameborder="0"></iframe>
+            </div>
+        </div>
+
+        <h3 style="margin-bottom: 20px; font-size: 1.5rem; color: var(--text-main);">Short Podcast Videos</h3>
         <div class="grid-3">
-            <div>
-                <div class="video-wrapper ratio-16-9">
-                    <iframe src="https://www.youtube.com/embed/YsXn5xJHNzw" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                </div>
-                <div class="category-label">AI Video</div>
-                <h3 class="video-title">Generative Concept Trailer</h3>
+            <div class="video-wrapper ratio-9-16">
+                <iframe src="https://www.instagram.com/reel/DCbA2N_ub5S/embed/" scrolling="no" frameborder="0"></iframe>
             </div>
-            <div>
-                <div class="video-wrapper ratio-16-9">
-                    <iframe src="https://www.youtube.com/embed/YsXn5xJHNzw" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                </div>
-                <div class="category-label">Motion Graphics</div>
-                <h3 class="video-title">Corporate Explainer</h3>
+            <div class="video-wrapper ratio-9-16">
+                <iframe src="https://www.instagram.com/reel/DCiwZZRTS7E/embed/" scrolling="no" frameborder="0"></iframe>
             </div>
-            <div>
-                <div class="video-wrapper ratio-16-9">
-                    <iframe src="https://www.youtube.com/embed/YsXn5xJHNzw" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                </div>
-                <div class="category-label">Animations</div>
-                <h3 class="video-title">2D Character Rigging</h3>
+            <div class="video-wrapper ratio-9-16">
+                <iframe src="https://www.instagram.com/reel/DDG4O5HhB-A/embed/" scrolling="no" frameborder="0"></iframe>
             </div>
         </div>
     </section>
 
-    <section id="services" class="section section-darker">
-        <div class="container services-layout">
-            <div class="services-text">
-                <h2>What I can do <span class="text-accent">for You</span></h2>
-                <p style="color: var(--text-muted); margin-bottom: 20px;">I don't just cut clips together. I build experiences, products, and brands that win hearts and hack the algorithm. Explore how I work.</p>
-                <a href="#contact" class="btn btn-primary">Book a Call Now ➔</a>
-            </div>
-            
-            <div class="service-cards">
-                <div class="s-card">
-                    <h3>Short Form & Reels</h3>
-                    <p>Bite-sized, high-impact edits perfect for capturing attention on Reels, Shorts, and TikTok. Engaging, dynamic, and packed with retention hacks.</p>
+    <section id="motion" class="section section-darker">
+        <div class="container">
+            <h2 class="section-title">Motion <span class="text-accent">Graphics</span></h2>
+            <div class="grid-3">
+                <div>
+                    <div class="video-wrapper ratio-9-16">
+                        <iframe src="https://www.instagram.com/reel/DUuZh94E6eM/embed/" scrolling="no" frameborder="0"></iframe>
+                    </div>
+                    <div class="category-label">Motion Design</div>
                 </div>
-                <div class="s-card">
-                    <h3>Motion Graphics & Animation</h3>
-                    <p>Elevate your production value. I create custom assets, lower thirds, and full animations to bring complex ideas to life beautifully.</p>
+                <div>
+                    <div class="video-wrapper ratio-9-16">
+                        <iframe src="https://www.instagram.com/reel/DUM7LGCiVdk/embed/" scrolling="no" frameborder="0"></iframe>
+                    </div>
+                    <div class="category-label">Motion Design</div>
                 </div>
-                <div class="s-card">
-                    <h3>Podcast & Long-Form</h3>
-                    <p>Transforming raw, in-depth interviews and tutorials into polished, captivating long-form videos with perfect audio sync and color grading.</p>
+                <div>
+                    <div class="video-wrapper ratio-9-16">
+                        <iframe src="https://www.instagram.com/reel/DV-5-5JCVr6/embed/" scrolling="no" frameborder="0"></iframe>
+                    </div>
+                    <div class="category-label">Motion Design</div>
                 </div>
             </div>
         </div>
@@ -396,69 +395,6 @@
             <h2>Color Correction</h2><h2>Audio Mixing</h2><h2>Transitions & Effects</h2>
         </div>
     </div>
-
-    <section id="pricing" class="section container">
-        <h2 class="section-title">Investment <span class="text-accent">Plans</span></h2>
-        <div class="pricing-grid">
-            <div class="price-card">
-                <h3>Creator Starter</h3>
-                <div class="price">$999<span>/month</span></div>
-                <ul class="feature-list">
-                    <li>20 Short videos / Reels</li>
-                    <li>Personalized video branding</li>
-                    <li>Pause or cancel anytime</li>
-                    <li>24/7 Chat support</li>
-                </ul>
-                <a href="#contact" class="btn">Get Started ➔</a>
-            </div>
-            <div class="price-card featured">
-                <h3>Pro Agency</h3>
-                <div class="price">$1999<span>/month</span></div>
-                <ul class="feature-list">
-                    <li>15 Shorts + 4 Long-form edits</li>
-                    <li>Motion Graphics included</li>
-                    <li>Thumbnail Design</li>
-                    <li>Priority rendering</li>
-                    <li>Unlimited revisions</li>
-                </ul>
-                <a href="#contact" class="btn">Get Started ➔</a>
-            </div>
-            <div class="price-card">
-                <h3>Enterprise</h3>
-                <div class="price">$2999<span>/month</span></div>
-                <ul class="feature-list">
-                    <li>Complete content ecosystem</li>
-                    <li>AI Video Generation</li>
-                    <li>Full Podcast Management</li>
-                    <li>Dedicated project manager</li>
-                    <li>Unlimited revisions</li>
-                </ul>
-                <a href="#contact" class="btn">Get Started ➔</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="faq" class="section container">
-        <h2 class="section-title">Frequently <span class="text-accent">Asked Questions</span></h2>
-        <div class="faq-container">
-            <div class="faq-item">
-                <div class="faq-question">Do you edit both long-form and short-form content? <span class="faq-icon">+</span></div>
-                <div class="faq-answer">Yes! I specialize in both. Whether it's a 1-hour podcast sync or a high-energy 30-second TikTok, I have dedicated strategies for both formats.</div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">How do I send you my raw footage? <span class="faq-icon">+</span></div>
-                <div class="faq-answer">We typically use shared Google Drive or Dropbox folders. Once you sign up, I'll send you an onboarding link to securely upload your files.</div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">What is your turnaround time? <span class="faq-icon">+</span></div>
-                <div class="faq-answer">For short-form content (Reels/Shorts), turnaround is usually 24-48 hours. Long-form videos and complex motion graphics take between 3-5 business days.</div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">Do you use AI in your editing process? <span class="faq-icon">+</span></div>
-                <div class="faq-answer">Yes, I leverage cutting-edge AI tools for audio cleanup, automated captioning, and generating unique visual concepts to speed up workflow and enhance quality.</div>
-            </div>
-        </div>
-    </section>
 
     <footer id="contact">
         <div class="footer-content">
@@ -478,19 +414,5 @@
             &copy; 2026 Aman Khan. All rights reserved.
         </div>
     </footer>
-
-    <script>
-        // FAQ Accordion Logic
-        const faqItems = document.querySelectorAll('.faq-item');
-
-        faqItems.forEach(item => {
-            const question = item.querySelector('.faq-question');
-            question.addEventListener('click', () => {
-                const isActive = item.classList.contains('active');
-                faqItems.forEach(faq => faq.classList.remove('active'));
-                if (!isActive) item.classList.add('active');
-            });
-        });
-    </script>
 </body>
 </html>
